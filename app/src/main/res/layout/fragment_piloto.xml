@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PilotoActivity$PlaceholderFragment"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <br.com.arnaldmartins.melhortempo.Chronometer
+            android:id="@+id/cronPiloto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="50dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Best:"
+            android:textColor="@android:color/white"
+            android:textSize="25dp"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/txtBestLAP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:00:000"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="65dp"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtLAP"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="L 1"
+            android:textColor="@color/azul_total"
+            android:background="@color/amarelo"
+            android:textSize="40dp"
+            android:layout_marginLeft="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last:"
+            android:textColor="@android:color/white"
+            android:textSize="25dp"
+            android:layout_marginLeft="165dp"/>
+
+        <TextView
+            android:id="@+id/txtLastLAP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:00:000"
+            android:textColor="@android:color/white"
+            android:textSize="65dp"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="PARCIAL"
+                />
+            <Button
+                android:id="@+id/btnParciais"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textColor="@color/azul_total"
+                android:background="@color/amarelo"
+                android:textSize="30dp"
+                android:layout_marginLeft="2dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="ABRIR"
+                />
+            <Button
+                android:id="@+id/btnAbrirLAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/azul_total"
+                android:background="@color/amarelo"
+                android:textSize="30dp"
+                android:layout_marginLeft="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtDiff_LAP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+0:00"
+            android:textColor="@color/amarelo"
+            android:textSize="100dp"
+            android:gravity="center"
+            android:layout_marginLeft="130dp"/>
+
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.LinearLayoutCompat>

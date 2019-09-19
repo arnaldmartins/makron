@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".activity.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_name">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parciais: "/>
+        <Spinner
+            android:id="@+id/spnTempo"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:gravity="center_vertical"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:ellipsize="marquee"
+            android:background="@android:color/darker_gray"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abrir Contagem: "/>
+        <Button
+            android:id="@+id/btnMenos"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="-"/>
+        <TextView
+            android:id="@+id/txtAbrirContagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textColor="@android:color/background_dark"
+            android:layout_margin="5dp"
+            android:textSize="9pt"/>
+        <Button
+            android:id="@+id/btnMais"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="+"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@android:color/background_dark">
+        <br.com.arnaldmartins.melhortempo.Chronometer
+            android:id="@+id/cronometro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="30dp"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+
+    <GridView
+        android:layout_marginTop="10dp"
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="4dp"
+        android:horizontalSpacing="2dp"
+        android:columnWidth="100dp"
+        android:stretchMode="columnWidth" />
+
+    <TextView
+        android:id="@+id/txtVoltaTeorica"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Teórica"
+        android:textSize="8pt"
+        android:paddingLeft="4dp"
+        android:textColor="@color/amarelo"
+        android:background="@android:color/background_dark"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btnIniciar"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:text="INICIAR"/>
+
+        <Button
+            android:id="@+id/btnLimpar"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:text="LIMPAR"/>
+
+        <Button
+            android:id="@+id/btnTempo"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:text="TEMPO"
+            android:background="@color/azul_total"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.LinearLayoutCompat>
