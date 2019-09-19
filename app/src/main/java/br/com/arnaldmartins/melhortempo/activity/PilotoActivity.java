@@ -58,6 +58,7 @@ public class PilotoActivity extends AppCompatActivity {
     static boolean cronRodando;
     static GridView gridView;
     static TextView txtBestLAP, txtLastLAP, txtLAP, txtDiff_LAP, txtVoltaTeorica;
+    static TextView txtBest1, txtParc1, txtBest2, txtParc2, txtBest3, txtParc3;
     static List<String> tempos = new ArrayList<>();
     static int numColunas = 1;
     static int contCol=0, contLAP=0;
@@ -282,7 +283,7 @@ public class PilotoActivity extends AppCompatActivity {
 
     }
 
-    private void calculaParcial(){
+    private void calculaParcial() {
         int min = 0, seg = 0, mil = 0;
         String[] timeStr;
         timeStr = tempos.get(tempos.size()-1).split(":");
@@ -375,7 +376,7 @@ public class PilotoActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView;
+            View rootView = null;
             int pagina = getArguments().getInt(ARG_SECTION_NUMBER);
             if (pagina == 1){
                 rootView = inflater.inflate(R.layout.fragment_result, container, false);
@@ -391,7 +392,19 @@ public class PilotoActivity extends AppCompatActivity {
                 });
             }
             else {
-                rootView = inflater.inflate(R.layout.fragment_piloto, container, false);
+                if(pagina == 2)
+                    rootView = inflater.inflate(R.layout.fragment_piloto, container, false);
+                else {
+                    rootView = inflater.inflate(R.layout.fragment_piloto2, container, false);
+                    txtBest1 = rootView.findViewById(R.id.txtBest1);
+                    txtParc1 = rootView.findViewById(R.id.txtParc1);
+                    txtBest2 = rootView.findViewById(R.id.txtBest2);
+                    txtParc2 = rootView.findViewById(R.id.txtParc2);
+                    txtBest3 = rootView.findViewById(R.id.txtBest3);
+                    txtParc3 = rootView.findViewById(R.id.txtParc3);
+                    mostraOcultaParciais(3);
+
+                }
                 cron = rootView.findViewById(R.id.cronPiloto1);
                 txtBestLAP = rootView.findViewById(R.id.txtBestLAP);
                 txtLastLAP = rootView.findViewById(R.id.txtLastLAP);
@@ -409,6 +422,8 @@ public class PilotoActivity extends AppCompatActivity {
                             int parciais = cont + 1 <= limite ? cont + 1 : 1;
                             btnParciais.setText(parciais + "");
                             btnAbrirLAP.setText("1");
+
+                            mostraOcultaParciais(parciais);
 
                             resetarLeitura(parciais, container.getContext());
 
@@ -452,6 +467,8 @@ public class PilotoActivity extends AppCompatActivity {
 
                 // setar page do piloto como foco inicial
                 mViewPager.setCurrentItem(1);
+
+
             }
 
             return rootView;
@@ -472,7 +489,21 @@ public class PilotoActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show total pages.
-            return 2;
+            return 3;
+        }
+    }
+
+    private static void mostraOcultaParciais(int parciais){
+        if(parciais == 1){
+            //txtBest1.setVisibility(View.VISIBLE);txtParc1.setVisibility(View.VISIBLE);
+            txtBest2.setVisibility(View.GONE);txtParc2.setVisibility(View.GONE);
+            txtBest3.setVisibility(View.GONE);txtParc3.setVisibility(View.GONE);
+        }else if(parciais == 2){
+            txtBest2.setVisibility(View.VISIBLE);txtParc2.setVisibility(View.VISIBLE);
+            txtBest3.setVisibility(View.GONE);txtParc3.setVisibility(View.GONE);
+        }else{
+            txtBest2.setVisibility(View.VISIBLE);txtParc2.setVisibility(View.VISIBLE);
+            txtBest3.setVisibility(View.VISIBLE);txtParc3.setVisibility(View.VISIBLE);
         }
     }
 
