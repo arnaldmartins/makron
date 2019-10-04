@@ -391,10 +391,11 @@ public class PilotoActivity extends AppCompatActivity {
                     }
                 });
             }
-            else {
-                if(pagina == 2)
+            else //{
+                if(pagina == 2) {
                     rootView = inflater.inflate(R.layout.fragment_piloto, container, false);
-                else {
+                /*
+                } else {
                     rootView = inflater.inflate(R.layout.fragment_piloto2, container, false);
                     txtBest1 = rootView.findViewById(R.id.txtBest1);
                     txtParc1 = rootView.findViewById(R.id.txtParc1);
@@ -404,7 +405,7 @@ public class PilotoActivity extends AppCompatActivity {
                     txtParc3 = rootView.findViewById(R.id.txtParc3);
                     mostraOcultaParciais(3);
 
-                }
+                }*/
                 cron = rootView.findViewById(R.id.cronPiloto1);
                 txtBestLAP = rootView.findViewById(R.id.txtBestLAP);
                 txtLastLAP = rootView.findViewById(R.id.txtLastLAP);
@@ -489,7 +490,7 @@ public class PilotoActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show total pages.
-            return 3;
+            return 2;
         }
     }
 
