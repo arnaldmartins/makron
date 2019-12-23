@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
     int contParcial=0;
     int contAbrirContagem=1;
 
+    // teste troca de repositorio git... Arnald 23-12-2019
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
